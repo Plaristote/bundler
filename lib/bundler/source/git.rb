@@ -40,6 +40,7 @@ module Bundler
         out = "GIT\n"
         out << "  remote: #{@uri}\n"
         out << "  revision: #{revision}\n"
+        out << "  password: #{@password}\n" unless @password.nil?
         %w(ref branch tag submodules).each do |opt|
           out << "  #{opt}: #{options[opt]}\n" if options[opt]
         end
